@@ -29,12 +29,16 @@ metadata:
   name: goof
 spec:
   ports:
+    - name: "80"
+      port: 80
+      targetPort: 3001
     - name: "3001"
       port: 3001
       targetPort: 3001
     - name: "9229"
       port: 9229
       targetPort: 9229
+  type: LoadBalancer
   selector:
     io.kompose.service: goof
 status:
